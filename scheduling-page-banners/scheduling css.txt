@@ -1,0 +1,55 @@
+/*
+.btn-primary {
+     background-color: #ec631d;
+}
+*/
+
+label[for="calendar-any"] {  visibility: hidden !important; /* Hides the original text */
+}
+
+label[for="calendar-any"]::before {
+  content: "Dowolna Fryzjerka Happy Curls" !important; /* Replace with your desired text */
+  visibility: visible !important; /* Ensures the pseudo-element text is visible */
+}
+
+#select-calendar-options > div:first-of-type > div:first-of-type::after {		
+	margin-top: 20px;		
+	content: "";		
+	display: block;		
+	width: 100%;		
+	height: 200px;	
+	background-image: url(https://happycurls.pl/scheduling-page-banners/banner-dowolna-small.jpg);		
+	background-size: cover;		
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+
+@media (min-width:769px) {
+  #select-calendar-options > div:first-of-type > div:first-of-type::after {			
+	background-image: url(https://happycurls.pl/scheduling-page-banners/banner-dowolna-big.jpg);	
+	}
+}
+
+#timezone-container {   
+	background-image: url(https://happycurls.pl/scheduling-page-banners/banner-schedule-small.jpg);
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    padding-top: 50%;
+    font-size: 0;
+    background-position:centeralign
+}
+
+@media (min-width:769px) {
+  #timezone-container  {			
+	background-image: url(https://happycurls.pl/scheduling-page-banners/banner-schedule-big.jpg);	
+	padding-top: 25%;
+  }
+}
+
+#timezone-prompt {
+	display:none
+}
