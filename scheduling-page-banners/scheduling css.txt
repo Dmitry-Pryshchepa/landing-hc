@@ -12,7 +12,7 @@ label[for="calendar-any"]::before {
   visibility: visible !important; /* Ensures the pseudo-element text is visible */
 }
 
-#select-calendar-options > div:first-of-type > div:first-of-type::after {		
+.select-calendar:not(.closed) #select-calendar-options > div:first-of-type > div:first-of-type::after {		
 	margin-top: 20px;		
 	content: "";		
 	display: block;		
@@ -26,7 +26,7 @@ label[for="calendar-any"]::before {
 }
 
 @media (min-width:769px) {
-  #select-calendar-options > div:first-of-type > div:first-of-type::after {			
+ .select-calendar:not(.closed)  #select-calendar-options > div:first-of-type > div:first-of-type::after {			
 	background-image: url(https://happycurls.pl/scheduling-page-banners/banner-dowolna-big.jpg);	
 	}
 }
@@ -52,4 +52,55 @@ label[for="calendar-any"]::before {
 
 #timezone-prompt {
 	display:none
+}
+
+.forms-action-button-container {
+         position: relative;
+         display: inline-block;
+}
+
+.forms-action-button-container input.btn {
+         color: transparent; /* hide original text */
+        width: 180px;
+        height: 50px;
+        overflow: hidden;
+}
+
+.forms-action-button-container::before {
+        content: "Umów wizytę";
+        color: white; 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap; 
+        pointer-events: none; 
+}
+
+.show-certificate-input {
+	color: transparent; /* hide original text */
+    	position: relative;
+   	width: 220px;
+    	height: auto;
+}
+
+.show-certificate-input::before {
+    	content: "Skorzystaj z kuponu rabatowego"; /*new text */
+    	color: black; /* Цвет текста */
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+}
+
+.show-certificate-input:hover {
+    	color: transparent; /* hide text */
+}
+
+.show-certificate-input:hover::before {
+    	color: black; /*keep color */
 }
